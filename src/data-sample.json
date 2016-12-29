@@ -1,0 +1,241 @@
+{
+  "feature": {
+    "name": "Minors",
+    "tasks": [
+      {
+        "taskId": 1,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "Add parameter to create Rest endpoint for getting the requestedMapType (plan type or whatever)",
+        "type": "API",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 2,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "Pass param to service create method",
+        "type": "API",
+        "complete": false,
+        "assignee": "",
+        "dependencies": [1]
+      },
+      {
+        "taskId": 3,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "Validation: Get plan type (major, minor) for given plan. Check the type matches requestedMapType. Modify validation on program to only be required for major plan types",
+        "type": "API",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 4,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "Modify Degree map elastic index to set Minor as the type when the plan type is Minor",
+        "type": "API",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 5,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "Create PlanType.Major and PlanType.Minor constants",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 6,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "MapCreate.jsx: Modify to check for a query string parameter. Note you can get this from react router using props: const requestedMapType = this.props.location.query.mapType || PlanTypes.Major. Pass requestedMapType as prop to MapHeaderCreate (MapHeaderEdit.jsx, we should rename the variable to match). Pass requestedMapType in mapActions.createMap call (button onClick)",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 7,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "MapHeaderEdit.jsx: Modify label for program to include ' (optional)' if the requestedMapType (prop is minor)",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 8,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "maps-store.js: In createMap take requestedMapType argument and pass as arg to validator. In createMap pass requestedMapType as query parameter on API call",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 9,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "create-header-validate.js: add validator for program that conditionally requires if request map type is major",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": [8]
+      },
+      {
+        "taskId": 10,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "SearchCriteria.jsx: Modify create new button to be dropdown for creating a Major or Minor map and when selected passes the requestMapType parameter to the create route",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 11,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "Test UI with Mock API",
+        "type": "Testing",
+        "complete": false,
+        "assignee": "",
+        "dependencies": [5,6,7,8,9]
+      },
+      {
+        "taskId": 12,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "Test UI with API",
+        "type": "Testing",
+        "complete": false,
+        "assignee": "",
+        "dependencies": [1,2,3,4,11]
+      },
+      {
+        "taskId": 13,
+        "story": {
+          "label": "SAS-3690: Create Minor Map",
+          "branch": "SAS-3690/CreateMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-3690"
+        },
+        "summary": "Deploy story and update Jira status",
+        "type": "Deploy",
+        "complete": false,
+        "assignee": "",
+        "dependencies": [12]
+      },
+      {
+        "taskId": 13,
+        "story": {
+          "label": "SAS-5053: Search Minors",
+          "branch": "SAS-5053/SearchMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-5053"
+        },
+        "summary": "Verify Minor appears as an option in the type criteria field when minor maps exist",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": [12]
+      },
+      {
+        "taskId": 14,
+        "story": {
+          "label": "SAS-5053: Search Minors",
+          "branch": "SAS-5053/SearchMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-5053"
+        },
+        "summary": "Add Minor lozenge to search result containers when the maps are minors",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 15,
+        "story": {
+          "label": "SAS-5053: Search Minors",
+          "branch": "SAS-5053/SearchMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-5053"
+        },
+        "summary": "Add Minor lozenge to My Maps for maps that are minors",
+        "type": "UI",
+        "complete": false,
+        "assignee": "",
+        "dependencies": []
+      },
+      {
+        "taskId": 16,
+        "story": {
+          "label": "SAS-5053: Search Minors",
+          "branch": "SAS-5053/SearchMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-5053"
+        },
+        "summary": "Test search integration",
+        "type": "Testing",
+        "complete": false,
+        "assignee": "",
+        "dependencies": [13,14,15]
+      },
+      {
+        "taskId": 17,
+        "story": {
+          "label": "SAS-5053: Search Minors",
+          "branch": "SAS-5053/SearchMinors",
+          "link": "https://uisapp2.iu.edu/jira-prd/browse/SAS-5053"
+        },
+        "summary": "Deploy story and update Jira status",
+        "type": "Deploy",
+        "complete": false,
+        "assignee": "",
+        "dependencies": [16]
+      }
+    ]
+  }
+}
